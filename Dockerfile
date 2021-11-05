@@ -1,8 +1,5 @@
-FROM couchdb as data
-ARG USER=admin
-ENV COUCHDB_USER $USER
-ARG PASS=password
-ENV COUCHDB_PASSWORD $PASS
+FROM couchdb 
+COPY local.ini /opt/couchdb/etc/
 ENV NODE_VERSION=12.6.0
 RUN apt install -y curl
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -16,5 +13,4 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js"]
+CMD /app/start.sh
