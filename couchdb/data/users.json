@@ -1,0 +1,26 @@
+{"docs":[{
+"name":"John",
+"email":"john@demo.com",
+"phone":"123-456-7890",
+"address":"123 Street ABC"
+},
+{
+"name":"Joe",
+"email":"joe@demo.com",
+"phone":"123-456-7777",
+"address":"456 Street ABC"
+},
+{
+  "name":"Tess",
+  "email":"tess@demo.com",
+  "phone":"123-222-321",
+  "address":"789 Street"
+},
+  {"_id":"_design/users",
+    "views": {
+        "all": {"map":"function (doc) {\n  emit(doc._id, {'id':doc._id, 'name':doc.name});\n}"},
+        "findByEmail": {"map": "function (doc) {\n  if (doc.email && doc.password) {\n    emit(doc.email, doc.password);\n  }\n}"}
+    },
+    "language":"javascript"}
+]}
+  
