@@ -18,8 +18,7 @@
 },
   {"_id":"_design/users",
     "views": {
-        "all": {"map":"function (doc) {\n  emit(doc._id, {'id':doc._id, 'name':doc.name});\n}"},
-        "findByEmail": {"map": "function (doc) {\n  if (doc.email && doc.password) {\n    emit(doc.email, doc.password);\n  }\n}"}
+        "all": {"map":"function (doc) {\n  emit(doc._id, {'id':doc._id, 'name':doc.name});\n}"}
     },
     "language":"javascript"}
 ]}
