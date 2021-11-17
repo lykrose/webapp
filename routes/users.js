@@ -1,6 +1,5 @@
 const express = require('express');
 var router = express.Router();
-router.use(express.json())
 
 var users_controller = require('../controllers/usersController');
 
