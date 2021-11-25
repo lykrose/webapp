@@ -1,14 +1,19 @@
 {
-    "name": "docker_web_app with db",
+    "name": "docker-web-app-with-db",
     "version": "1.0.0",
     "description": "Node.JS & CouchDB",
     "author": "Samuel Kong",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "test": "jest --verbose ./tests"
     },
     "dependencies": {
         "express": "^4.16.1",
-        "nano": "^9.0.5"
+        "nano": "^9.0.5",
+        "supertest": "^6.1.6"
+    },
+    "devDependencies": {
+        "jest": "^27.3.1"
     }
 }
