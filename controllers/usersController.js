@@ -4,7 +4,7 @@ const users = nano.use('users')
 
 
 exports.user_list = (req, res) => {
-    users.view('users', 'all', {include_docs: true}, (err, data) => {
+    users.view('users', 'all', (err, data) => {
         if (err) {
             console.log(err)
             res.send(err)
