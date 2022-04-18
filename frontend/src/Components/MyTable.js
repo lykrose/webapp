@@ -13,6 +13,7 @@ function MyTable() {
                     <td>{info.name}</td>
                     <td>{info.email}</td>
                     <td>{info.phone}</td>
+                    <td><input type='checkbox'/></td>
                 </tr>
             )
         }
@@ -25,6 +26,7 @@ function MyTable() {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Selection</th>
                 </tr>
             </thead>
             <tbody>

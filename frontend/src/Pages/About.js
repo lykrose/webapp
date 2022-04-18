@@ -16,10 +16,11 @@ const About = () => {
             }}>
                 <div style={{
                     paddingTop: '200px',
-                    paddingLeft: '50px',
-                    paddingBottom: '150px'
+                    textAlign: 'center',
+                    paddingBottom: '150px',
+                    fontFamily: 'impact'
                 }}>
-                    <h1>Hi my name is Samuel and welcome to my website</h1>
+                    <h1>About Me</h1>
                 </div>
             </div>
             <div className='container' style={{ 
@@ -36,6 +37,7 @@ const About = () => {
                 }}></div>
                 <div className='middle' style={{ margin: '0 100px' }}>
                     <div className='box' style={{
+                        marginBottom: '15px'
                     }}>
                         <Image src={Face} roundedCircle style={{
                             maxWidth: '100px',
@@ -43,13 +45,16 @@ const About = () => {
                             float: 'left',
                             paddingRight: '10px'
                         }}/>
-                        <p style={{ display: 'inline' }}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, 
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                            Excepteur sint occaecat cupidatat non proident, 
-                            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                        <p style={{ display: 'inline' }}>"Hi my name is Samuel Kong, a graduate of York University 
+                        with a Bachelor's of Science in Computer Science. I am a very hard worker and a quick 
+                        learner who has a strong intrest and passion in technology and am eager to expand my skills. 
+                        I am currently looking for work related to Computer Science, specifically in the web development
+                        field. I have expreience with many web development technologies such as React JS, Node JS,
+                        Express, RESTful API, and HTML and CSS and have worked in the in this field previously. 
+                        I also have experience with google could and containerized deployment using Docker as this 
+                        website runs on a Docker container which is uploaded to Google Cloud. Attached below is my 
+                        Resume if you are interested or a downloadable link <a href=''>here</a>."</p>
+
                     </div>
                 </div>
             </div>

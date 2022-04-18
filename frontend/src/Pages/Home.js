@@ -29,7 +29,7 @@ const Home = () => {
                 textDecoration: 'underline',
                 paddingTop: '10px'
             }}>
-                <h1 classstyle={{ color: '#4f4a4a' }}>Lore Ipsum</h1>
+                <h1 classstyle={{ color: '#4f4a4a' }}>What is this?</h1>
             </div>
             <div className='container' style={{ overflow: 'hidden' }}>
                 <div className='right' style={{
@@ -41,13 +41,16 @@ const Home = () => {
                     width: '100px'
                 }}></div>
                 <div className='middle' style={{ margin: '0 100px' }}>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, 
-                        sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <p>"Hi my name is Samuel Kong, and welcome to my website project. This website is a
+                        personal project of mine with the goal of expanding my skills and learning more 
+                        about dev ops and web development as well as a showcase of my abilities.
+                        This website is build using React JS and React-Bootstrap for the frontend which
+                        communicates with a Nodes JS express backend through RESTful API calls.
+                        This occurs under the examples tab where there is an example table that would 
+                        store users onto a CouchDB database which is stored on the backend. 
+                        Modifications to the table such as adding a user or deleting users are done 
+                        through the above API calls. Included in this website is my contact information 
+                        and more about me, feel free to reach out if you are interested in my work."</p>
                 </div>
             </div>
         </>

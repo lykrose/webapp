@@ -1,12 +1,12 @@
 import React from 'react';
-import Background from './../Images/Desk.jpg';
+// import Background from './../Images/Desk.jpg';
 import MyTable from '../Components/MyTable';
 import Input from '../Components/Input';
 
 const Example = () => {
     return (
         <>
-            <div className='background' style={{ 
+            {/* <div className='background' style={{ 
                 backgroundImage: "url(" + Background + ")",
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
@@ -20,12 +20,12 @@ const Example = () => {
                 }}>
                     <p></p>
                 </div>
-            </div>
+            </div> */}
             <div style={{ 
                 padding: '100px',
-                paddingTop: '50px'
+                paddingTop: '100px'
             }}>
-                <h1 classstyle={{ color: '#4f4a4a' }}>Example Table</h1>
+                <h1 classstyle={{ color: '#4f4a4a' }}>Example Users Database</h1>
                 <MyTable/>
                 <Input/>
             </div>
