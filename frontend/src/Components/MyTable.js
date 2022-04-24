@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Table from 'react-bootstrap/Table'
 import JsonData from './../Data/example.json'
 
-function MyTable() {
+const MyTable = () => {
     const SimpleData = JsonData.rows.map(obj => obj.value)
     const Data = SimpleData.map(
         (info)=>{
