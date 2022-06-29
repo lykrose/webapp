@@ -1,7 +1,10 @@
 const express = require('express');
 const nano = require('nano')('http://admin:password@localhost:5984');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 var usersRouter = require('./routes/users');
 var homeRouter = require('./routes/home');

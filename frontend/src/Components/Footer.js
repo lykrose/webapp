@@ -9,7 +9,7 @@ const Footer = () => {
                 textAlign: 'center'
             }}>
                 <h2 style={{ color:'white' }}>Contact Information</h2>
-                <p style={{ color: 'white '}}>email@email.com / (999) 999-9999</p>
+                <p style={{ color: 'white '}}>kongsamuel1999@gmail.com / (416) 910-5877</p>
             </div>
         </>
     )

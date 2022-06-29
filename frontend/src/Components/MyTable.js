@@ -1,23 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Table from 'react-bootstrap/Table'
-import JsonData from './../Data/example.json'
+import { getData } from '../Services/data'
 
 const MyTable = () => {
-    const SimpleData = JsonData.rows.map(obj => obj.value)
-    const Data = SimpleData.map(
-        (info)=>{
-            return(
-                <tr>
-                    <td>{info.id}</td>
-                    <td>{info.name}</td>
-                    <td>{info.email}</td>
-                    <td>{info.phone}</td>
-                    <td><input type='checkbox'/></td>
-                </tr>
-            )
-        }
-    )
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        let mounted = true;
+        getData()
+            .then(items => {
+                if(mounted) {
+                    setData(items)
+                    console.log(items)
+                }
+            })
+        return () => mounted = false
+    }, [])
+
     return (
         <Table striped border hover>
             <thead>
@@ -30,7 +30,19 @@ const MyTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {Data}
+                {data.map(
+                    (info)=>{
+                        return(
+                            <tr>
+                                <td>{info.id}</td>
+                                <td>{info.name}</td>
+                                <td>{info.email}</td>
+                                <td>{info.phone}</td>
+                                <td><input type='checkbox'/></td>
+                            </tr>
+                        )
+                    }
+                )}
             </tbody>
         </Table>
     )

@@ -1,40 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.css'
+import Table from 'react-bootstrap/Table'
+import { getData, setData } from '../Services/data'
 
 const Input = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
-    const [message, setMessage] = useState("")
+    const [alert, setAlert] = useState("")
+    const [data, setInfo] = useState([])
+    let mounted = useRef(true)
 
-    let handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            let res = await fetch("https://localhost:8080/users", {
-                method: "POST",
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    phone: phone,
-                }),
+    useEffect(() => {
+        mounted.current = true
+        // if (data.length && !alert) {
+        //     return;
+        // }
+        getData()
+            .then(items => {
+                if(mounted.current) {
+                    setInfo(items)
+                    console.log(items)
+                }
             })
-            let resJSON = await res.json()
-            if (res.status === 200) {
-                setName("")
-                setEmail("")
-                setPhone("")
-                setMessage("User added successfully")
-            } else {
-                setMessage("An error occured    ")
-            }
-        } catch (err) {
-            console.log(err)
+        return () => mounted = false
+    }, [alert, data])
+
+    useEffect (() => {
+        if (alert) {
+            setTimeout(() => {
+                if (mounted.current) {
+                    setAlert("false")
+                }
+            }, 1000)
         }
+    }, [alert])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setData(name, email, phone)
+            .then(() => {
+                if (mounted.current) {
+                    setName('Enter Name')
+                    setEmail('Enter Email Address')
+                    setPhone('Enter Phone Number')
+                    setAlert(true)
+                }
+            })
     }
-    
+
+    let handleDelete = async (e) => {
+        // e.preventDefault();
+        // try {
+        //     let res = await fetch("https://localhst:8080/users", {
+
+        //     })
+        // }
+    }
+
     return (
         <>
+            <Table striped border hover>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map(
+                        (info)=>{
+                            return(
+                                <tr>
+                                    <td>{info.id}</td>
+                                    <td>{info.name}</td>
+                                    <td>{info.email}</td>
+                                    <td>{info.phone}</td>
+                                    <td><input type='checkbox'/></td>
+                                </tr>
+                            )
+                        }
+                    )}
+                </tbody>
+            </Table>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
@@ -50,10 +103,10 @@ const Input = () => {
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control type="phone" value={phone} placeholder="Enter Phone Number" onChange={(e) => setPhone(e.target.value)} />
                 </Form.Group>
+                <Button variant="primary" type="submit" >Submit</Button>{' '}
             </Form>
-            <Button variant="primary" type="submit" >Submit</Button>{' '}
-            <Button variant="secondary" type="button">Delete</Button>
-            <div className="message">{ message ? <p>{ message }</p> : null }</div>
+            {/* <Button variant="secondary" type="button" onClick={handleDelete}>Delete</Button> */}
+            {/* <div className="message">{ message && alert ? <p>{ message }</p> : null }</div> */}
         </>
     )
 }

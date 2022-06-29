@@ -9,8 +9,8 @@ exports.user_list = (req, res) => {
             console.log(err)
             res.send(err)
         } else {
-            console.log(data)
-            res.send(data)
+            console.log(data.rows.map(obj => obj.value))
+            res.send(data.rows.map(obj => obj.value))
         } 
     });
 };

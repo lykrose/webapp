@@ -1,7 +1,7 @@
 import React from 'react';
 // import Background from './../Images/Desk.jpg';
-import MyTable from '../Components/MyTable';
 import Input from '../Components/Input';
+import MyTable from '../Components/MyTable';
 
 const Example = () => {
     return (
@@ -26,7 +26,6 @@ const Example = () => {
                 paddingTop: '100px'
             }}>
                 <h1 classstyle={{ color: '#4f4a4a' }}>Example Users Database</h1>
-                <MyTable/>
                 <Input/>
             </div>
         </>

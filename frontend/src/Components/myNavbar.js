@@ -7,7 +7,7 @@ const myNavbar = () => {
         <>
             <Navbar bg='light' fixed='top' expand='sm' collapseOnSelect>
                 <Container fluid>
-                <Navbar.Brand href="/">Samuel</Navbar.Brand>
+                <Navbar.Brand href="/">Samuel Kong</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">    
