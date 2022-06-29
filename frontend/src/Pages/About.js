@@ -2,6 +2,7 @@ import React from 'react';
 import Background from './../Images/Desk.jpg';
 import Image from 'react-bootstrap/Image';
 import Face from './../Images/Avatar.png';
+import Pdf from './../Data/Resume.pdf';
 
 const About = () => {
     return (
@@ -45,16 +46,13 @@ const About = () => {
                             float: 'left',
                             paddingRight: '10px'
                         }}/>
-                        <p style={{ display: 'inline' }}>"Hi my name is Samuel Kong, a graduate of York University 
-                        with a Bachelor's of Science in Computer Science. I am a very hard worker and a quick 
-                        learner who has a strong intrest and passion in technology and am eager to expand my skills. 
-                        I am currently looking for work related to Computer Science, specifically in the web development
-                        field. I have expreience with many web development technologies such as React JS, Node JS,
-                        Express, RESTful API, and HTML and CSS and have worked in the in this field previously. 
-                        I also have experience with google could and containerized deployment using Docker as this 
-                        website runs on a Docker container which is uploaded to Google Cloud. Attached below is my 
-                        Resume if you are interested or a downloadable link <a href=''>here</a>."</p>
-
+                        <p style={{ display: 'inline' }}>"Welcome to my about me section! If you are wondering about me, 
+                        I am a 22 year old graduate of York University with a Bachelor's of Science in Computer Science. 
+                        I am also a very hard worker and a quick learner who has a strong intrest and passion in technology 
+                        and I look forward to expand my skills. I am currently looking for work related to Computer Science, 
+                        specifically in the web development field. I have expreience with many web development technologies 
+                        such as React JS, Node JS, Express, RESTful API, and HTML and CSS and have worked in the in this 
+                        field previously. Attached below is my Resume if you are interested or a downloadable link <a href={ Pdf }>here</a>."</p>
                     </div>
                 </div>
             </div>
