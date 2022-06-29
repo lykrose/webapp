@@ -15,5 +15,4 @@ export function setData(name, email, phone) {
             phone: phone
          }),
     })
-        .then(data => data.json())
 }
