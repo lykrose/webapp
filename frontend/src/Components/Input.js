@@ -9,15 +9,17 @@ const Input = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
-    const [alert, setAlert] = useState("")
-    const [data, setInfo] = useState([])
+    const [alert, setAlert] = useState(false)
+    const [info, setInfo] = useState([])
     let mounted = useRef(true)
+
+    // const triggerFetchData = () => setAlert(t => !t);
 
     useEffect(() => {
         mounted.current = true
-        // if (data.length && !alert) {
-        //     return;
-        // }
+        if (info.length && !alert) {
+              return;
+        }
         getData()
             .then(items => {
                 if(mounted.current) {
@@ -25,16 +27,16 @@ const Input = () => {
                     console.log(items)
                 }
             })
-        return () => mounted = false
-    }, [alert, data])
+
+        // triggerFetchData();
+        return () => mounted.current = false
+    }, [alert, info.length])
 
     useEffect (() => {
         if (alert) {
-            setTimeout(() => {
-                if (mounted.current) {
-                    setAlert("false")
-                }
-            }, 1000)
+            if (mounted.current) {
+                setAlert(false)
+            }
         }
     }, [alert])
 
@@ -49,6 +51,7 @@ const Input = () => {
                     setAlert(true)
                 }
             })
+        // triggerFetchData();
     }
 
     let handleDelete = async (e) => {
@@ -73,7 +76,7 @@ const Input = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(
+                    {info.map(
                         (info)=>{
                             return(
                                 <tr>
