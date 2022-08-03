@@ -1,5 +1,4 @@
-const PORT = process.env.PORT || 8080;
-const app = require("./app")
+const app = require("./application")
 
-app.listen(PORT)
-console.log('Running on ${PORT}');
+app.listen(8080)
+console.log("Running on 8080");
