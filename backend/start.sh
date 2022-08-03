@@ -8,6 +8,6 @@ sleep 5
 cd ..
 cd ..
 cd ..
-cd app
+cd backend
 node couchdb/db_init.js
 node server.js

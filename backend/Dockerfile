@@ -6,9 +6,9 @@ RUN apt-get update && apt-get install -y \
 RUN npm install npm@latest -g && \
     npm install n -g && \
     n latest
-WORKDIR /app
+WORKDIR /backend
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 COPY . .
-
-CMD bash /app/start.sh
+EXPOSE 8080
+CMD bash /backend/start.sh

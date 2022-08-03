@@ -16,3 +16,9 @@ export function setData(name, email, phone) {
          }),
     })
 }
+
+export function getUserData(id) {
+    const user = fetch(`http://localhost:8080/users/${id}`).json()
+    console.log(user.id + " " + user.rev)
+    return fetch(`http://localhost8080/users/${user.id}/${user.rev}`, { method: 'DELETE' })
+}

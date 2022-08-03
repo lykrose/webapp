@@ -13,8 +13,6 @@ const Input = () => {
     const [info, setInfo] = useState([])
     let mounted = useRef(true)
 
-    // const triggerFetchData = () => setAlert(t => !t);
-
     useEffect(() => {
         mounted.current = true
         if (info.length && !alert) {
@@ -28,7 +26,6 @@ const Input = () => {
                 }
             })
 
-        // triggerFetchData();
         return () => mounted.current = false
     }, [alert, info.length])
 
@@ -51,7 +48,6 @@ const Input = () => {
                     setAlert(true)
                 }
             })
-        // triggerFetchData();
     }
 
     let handleDelete = async (e) => {
